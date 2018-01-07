@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BD2_komis.iml" filepath="$PROJECT_DIR$/BD2_komis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BD2_komis_main.iml" filepath="$PROJECT_DIR$/.idea/modules/BD2_komis_main.iml" group="BD2_komis" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BD2_komis_test.iml" filepath="$PROJECT_DIR$/.idea/modules/BD2_komis_test.iml" group="BD2_komis" />
+    </modules>
+  </component>
+</project>
