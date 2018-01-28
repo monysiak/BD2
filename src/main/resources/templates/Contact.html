@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html layout:decorator="layout/layout" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" >
+<body>
+<th:block layout:fragment="content">
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default">
+                <form method="POST" action="/contact">
+                    <br><br/>
+                    <label for="from">Od:</label><input id="from" name="from" type="text"/><br/>
+                    <label for="subject">TEMAT:</label><input id="subject" name="subject" type="text"/><br/>
+                    <textarea name="body" cols="60" rows="15"></textarea><br/>
+                    <input type="submit" value="Wyslij"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

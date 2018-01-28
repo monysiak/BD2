@@ -24,9 +24,13 @@ repositories {
 
 
 dependencies {
+	runtime('javax.xml.bind:jaxb-api:2.2.8')
+	runtime('javax.xml.bind:jaxb-core:2.2.8')
+	runtime('com.sun.xml.bind:jaxb-impl:2.2.8')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
 	compileOnly('org.projectlombok:lombok:1.16.18')
 	runtime('org.postgresql:postgresql:42.1.4')
 }
