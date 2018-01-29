@@ -8,6 +8,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">O firmie</div>
                 <div class="panel-body">
+                    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
                 </div>
             </div>
         </div>
@@ -15,11 +19,6 @@
         <div class="col-md-8 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h4>Zepol projektowy:</h4>
-                    <h5>Aleksander Piotrowski</h5>
-                    <h5>Lukasz Smigielski</h5>
-                    <h5>Monika Wrzesniak</h5>
-                    <h5>Ewa Zasim</h5>
                 </div>
             </div>
         </div>

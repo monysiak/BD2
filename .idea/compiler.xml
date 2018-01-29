@@ -4,6 +4,10 @@
     <bytecodeTargetLevel>
       <module name="BD2_komis_main" target="1.8" />
       <module name="BD2_komis_test" target="1.8" />
+      <module name="BD2Komis-BD2_komis_main" target="1.8" />
+      <module name="BD2Komis-BD2_komis_main~1" target="1.8" />
+      <module name="BD2Komis-BD2_komis_test" target="1.8" />
+      <module name="BD2Komis-BD2_komis_test~1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

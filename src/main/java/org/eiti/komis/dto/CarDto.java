@@ -1,30 +1,34 @@
 package org.eiti.komis.dto;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="samochody", schema = "public")
 public class CarDto {
 
-    private @Id
+    @Id
     @GeneratedValue
-    Long id;
-    int vin;
-    int rokProdukcji;
-    int przebieg;
-    String krajPochodzenia;
-    boolean bezwypadkowy;
-    int rokRejestracji;
-    int liczbaWlascicieli;
-    int numerMiejscanaParkingu;
+    private Long id;
+    @Column(name="vin")
+    private int vin;
+    @Column(name="rok_produkcji")
+    private int rokProdukcji;
+    @Column(name="przebieg")
+    private int przebieg;
+    @Column(name="kraj_pochodzenia")
+    private String krajPochodzenia;
+    @Column(name="czy_bezwypadkowy")
+    private boolean bezwypadkowy;
+    @Column(name="rok_rejestracji")
+    private int rokRejestracji;
+    @Column(name="liczba_wlascicieli")
+    private int liczbaWlascicieli;
+    @Column(name="numer_miejsca_na_parkingu")
+    private int numerMiejscanaParkingu;
 
     public CarDto() {}
 
-    @Id
     public long getId() {
         return id;
     }
