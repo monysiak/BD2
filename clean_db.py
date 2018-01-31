@@ -1,7 +1,11 @@
 #!/usr/bin/python
+#pip install psycopg2 - jak nie dziala
 
 import psycopg2
 from os import listdir
+import csv
+import os
+from functools import reduce
 
 
 class PsqlDao:
@@ -11,11 +15,18 @@ class PsqlDao:
 
     def insert_csv_file(self, file):
         cur = self.cur
-        cur.execute('')
+        csv_file = csv.reader(open(file), delimiter=';', quotechar='\'')
+        for csv_line in csv_file:
+            line = str(reduce((lambda x, y: x + ';' + y), csv_line))
+            if line.__contains__('id'):
+                pass #zapamietac
+            else:
+                pass #insert
 
 
 if __name__ == '__main__':
     dao = PsqlDao()
-    files = listdir('./dictionary_data')
+    dict_data = './dictionary_data'
+    files = listdir(dict_data)
     for file in files:
-        dao.insert_csv_file(file)
+        dao.insert_csv_file(os.path.join(dict_data, file))
