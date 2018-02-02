@@ -27,6 +27,7 @@ public class CarDto {
     @Column(name="numer_miejsca_na_parkingu")
     private int numerMiejscanaParkingu;
 
+
     public CarDto() {}
 
     public long getId() {

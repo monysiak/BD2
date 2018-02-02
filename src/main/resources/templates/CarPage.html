@@ -10,11 +10,6 @@
                 <div class="panel-body">
                     <form method="post" class="form-group" action="/car">
                         <div class="form-group">
-                            <label for="id">Id:&nbsp;</label>
-                            <input class="form-control" type="number" name="id" id="id" maxlength="10"/>
-                        </div>
-
-                        <div class="form-group">
                             <label for="vin">VIN:&nbsp;</label>
                             <input class="form-control" type="text" name="name" id="vin" maxlength="50"/>
                         </div>
@@ -34,6 +29,15 @@
                             <input class="form-control" type="text" name="dateOfBirth" id="krajPochodzenia" maxlength="20"/>
                         </div>
 
+                        <div class="form-group">
+                            <label for="krajPochodzenia">Marka:&nbsp;</label>
+                            <input class="form-control" type="text" name="dateOfBirth" id="krajPochodzenia" maxlength="20"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="krajPochodzenia">Model:&nbsp;</label>
+                            <input class="form-control" type="text" name="dateOfBirth" id="krajPochodzenia" maxlength="20"/>
+                        </div>
                         <input class="btn btn-primary" type="submit" value="Dodaj"/>
 
                     </form>
@@ -42,27 +46,31 @@
             </div>
         </div>
 
-        <div class="col-md-8 col-sm-8">
+        <div class="col-md-12 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Samochody</div>
                 <div class="panel-body">
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>Id oferty</th>
                             <th>Vin</th>
                             <th>Rok produkcji</th>
                             <th>Rok rejestracji</th>
                             <th>Kraj pochodzenia</th>
+                            <th>Marka</th>
+                            <th>Model</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="car : ${cars}">
+                        CarPage.html                        <tr th:each="car : ${cars}">
                             <td th:text="${car.getId()}">Id</td>
                             <td th:text="${car.getVin()}">Vin</td>
                             <td th:text="${car.getRokProdukcji()}">Rok produkcji</td>
                             <td th:text="${car.getRokRejestracji()}">Rok rejestracji</td>
                             <td th:text="${car.getKrajPochodzenia()}">Kraj pochodzenia</td>
+                            <td th:text="${car.getRokRejestracji()}">Marka</td>
+                            <td th:text="${car.getKrajPochodzenia()}">Model</td>
                         </tr>
                         </tbody>
                     </table>

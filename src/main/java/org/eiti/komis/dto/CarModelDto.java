@@ -1,10 +1,7 @@
 package org.eiti.komis.dto;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="modele_samochodow", schema = "public")
@@ -13,8 +10,11 @@ public class CarModelDto {
     private @Id
     @GeneratedValue
     Long id;
+    @Column(name="model")
     String model;
+    @Column(name="marka")
     String marka;
+    @Column(name="wersja_modelu")
     int wersjaModelu;
 
     public CarModelDto() {}
