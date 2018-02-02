@@ -16,9 +16,9 @@ class PsqlDao:
         cur = self.cur
         csv_file = open(file, 'r').read().split('\n')
         for line in csv_file:
-            insert = "insert into {0} values(".format((file.split('.')[0]).split('/')[1])
+            insert = "insert into {0} values(".format((file.split('/')[1]).split('.')[0])
             line = line.replace(';', ',')
-            line = map(lambda x: '\''+ x +'\'' if not x.isdigit() else x, line.split(','))
+            line = map(lambda x: '\'' + x + '\'' if x != 'null' and not x.isdigit() else x, line.split(','))
             line = ",".join(line)
             insert = insert + line + ");"
             cur.execute(insert)
@@ -29,6 +29,13 @@ if __name__ == '__main__':
     possible_exec = ["dict", "test"]
 
     test = False
+
+    if sys.argv[1] == "man":
+        dao = PsqlDao()
+        dao.cur.execute('begin')
+        dao.insert_csv_file('./' + sys.argv[2])
+        dao.cur.execute('commit')
+        exit(1)
     if len(sys.argv) != 2 or not (sys.argv[1] in possible_exec):
         print "usage: ./insert_clean_data <test/dict>"
         exit(1)
@@ -38,13 +45,13 @@ if __name__ == '__main__':
         files = listdir("test_data")
         test = True
     dao = PsqlDao()
-    dao.cur.execute('begin')
     for file in files:
+        dao.cur.execute('begin')
         if not test:
             dao.insert_csv_file(os.path.join("dictionary_data", file))
         else:
             dao.insert_csv_file(os.path.join("test_data", file))
-    dao.cur.execute('commit')
+        dao.cur.execute('commit')
     print """ ____________________________
 < Zalanie danymi sie udalo xD >
  ----------------------------
