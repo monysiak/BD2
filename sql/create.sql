@@ -583,6 +583,7 @@ CREATE SEQUENCE wyplacone_wynagrodzenia_seq
       NO MAXVALUE
       NO CYCLE
 ;
+create table zysk_raport(suma_zyskow decimal(15,2), miesiac text primary key);
 
 -- End of file.
 

@@ -154,5 +154,6 @@ DROP SEQUENCE IF EXISTS urlopy_pracownikow_seq;
 
 DROP SEQUENCE IF EXISTS wyplacone_wynagrodzenia_seq;
 
+drop table zysk_raport;
 -- End of file.
 
